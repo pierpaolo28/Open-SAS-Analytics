@@ -8,8 +8,8 @@
         <!-- Plotly chart will be drawn inside this DIV -->
         <script type="text/javascript">
             function onMessage(evt) {
-                if (evt && evt.data && evt.data.hasOwnProperty("data"))
-                    var xdat = [];
+                // if (evt && evt.data && evt.data.hasOwnProperty("data"))
+                var xdat = [];
                 var ydat = [];
                 var zdat = [];
                 var textdat = [];
@@ -17,7 +17,6 @@
                 var xlabel = evt.data.columns[0].label;
                 var ylabel = evt.data.columns[1].label;
                 var zlabel = evt.data.columns[2].label;
-
                 var tdat = [];
                 for (var i = 0; i < evt.data.data.length; i++) {
                     xdat.push(evt.data.data[i][0]);
