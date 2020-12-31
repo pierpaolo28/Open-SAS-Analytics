@@ -1,0 +1,106 @@
+<head>
+    <!-- Load plotly.js into the DOM -->
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+</head>
+
+<body>
+    <div id='myDiv' style="width: 100%; height: 100%;">
+        <!-- Plotly chart will be drawn inside this DIV -->
+        <script type="text/javascript">
+            function onMessage(evt) {
+                // if (evt && evt.data && evt.data.hasOwnProperty("data"))
+                var xdat = [];
+                var ydat = [];
+                for (var i = 0; i < evt.data.data.length; i++) {
+                    xdat.push(evt.data.data[i][0]);
+                    ydat.push(evt.data.data[i][1]);
+                }
+
+                var trace1 = {
+                    x: xdat,
+                    y: ydat,
+                    mode: 'markers',
+                    name: 'points',
+                    marker: {
+                        color: 'rgb(102,0,0)',
+                        size: 2,
+                        opacity: 0.4
+                    },
+                    type: 'scatter'
+                };
+                var trace2 = {
+                    x: xdat,
+                    y: ydat,
+                    name: 'density',
+                    ncontours: 20,
+                    colorscale: 'Hot',
+                    reversescale: true,
+                    showscale: false,
+                    type: 'histogram2dcontour'
+                };
+                var trace3 = {
+                    x: xdat,
+                    name: 'x density',
+                    marker: {
+                        color: 'rgb(102,0,0)'
+                    },
+                    yaxis: 'y2',
+                    type: 'histogram'
+                };
+                var trace4 = {
+                    y: ydat,
+                    name: 'y density',
+                    marker: {
+                        color: 'rgb(102,0,0)'
+                    },
+                    xaxis: 'x2',
+                    type: 'histogram'
+                };
+                var data = [trace1, trace2, trace3, trace4];
+                var layout = {
+                    showlegend: false,
+                    margin: {
+                        t: 50
+                    },
+                    hovermode: 'closest',
+                    bargap: 0,
+                    xaxis: {
+                        domain: [0, 0.85],
+                        showgrid: false,
+                        zeroline: false
+                    },
+                    yaxis: {
+                        domain: [0, 0.85],
+                        showgrid: false,
+                        zeroline: false
+                    },
+                    xaxis2: {
+                        domain: [0.85, 1],
+                        showgrid: false,
+                        zeroline: false
+                    },
+                    yaxis2: {
+                        domain: [0.85, 1],
+                        showgrid: false,
+                        zeroline: false
+                    }
+                };
+
+                var config = {
+                    editable: false,
+                    displaylogo: false,
+                    responsive: true,
+                    displayModeBar: false,
+                };
+
+                Plotly.newPlot('myDiv', data, layout, config);
+            };
+
+            if (window.addEventListener) {
+                window.addEventListener("message", onMessage, false);
+            } else {
+                window.attachEvent("onmessage", onMessage);
+            }
+        </script>
+    </div>
+</body>
