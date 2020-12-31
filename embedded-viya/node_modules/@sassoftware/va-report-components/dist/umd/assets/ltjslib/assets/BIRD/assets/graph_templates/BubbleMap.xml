@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+  <Meta>
+    <Template>BubbleMap</Template>
+    <DataNameMap>
+            <Entry model="LayoutOverlayMap"/>
+    </DataNameMap>
+  </Meta>
+  <Animation keyFrame="KEY_FRAME" keyFrameSortOrder="ASCENDINGUNFORMATTED"/>
+  <LayoutOverlayMap showMapController="true">
+    <MapLayer />
+    <BubblePlot name="BubblePlot" _stmt="bubblePlot" x="X" y="Y" size="SIZE" includeMissingGroup="true" colorResponse="COLOR" animationID="GROUP" trailDisplay="BUBBLE LINE" colorModel="TwoColorRamp" tipListPolicy="REPLACE">
+      <OutlineAttrs color="Outlines:lineColor"/>
+    </BubblePlot>
+  </LayoutOverlayMap>
+  <LayoutGlobalLegend>    
+    <ContinuousLegend title="auto" title_type="Keyword" displayMissing="AUTO" extractScale="true" valueStyle="INFLECTIONS">
+      <GraphNames>
+        <Value>BubblePlot</Value>
+      </GraphNames>
+    </ContinuousLegend>
+	<SizeLegend title="auto" title_type="Keyword" extractScale="true">
+         <GraphNames>
+           <Value>BubblePlot</Value>
+         </GraphNames>
+      </SizeLegend>
+  </LayoutGlobalLegend>
+</StatGraph>
+

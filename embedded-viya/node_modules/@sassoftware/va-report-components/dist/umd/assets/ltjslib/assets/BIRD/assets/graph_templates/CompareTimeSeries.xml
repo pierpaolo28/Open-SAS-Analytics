@@ -1,0 +1,59 @@
+<GraphTemplate version="1.0">
+  <StatGraph missingValueDisplay="AUTOLABEL" opaque="false" includeMissingDiscrete="true">
+    <Meta>
+      <DynVars>
+        <DynVar name="TIME" required="true" type="TIME" description="TIME_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="TIME_MEASURE1" required="true" type="NUMERIC" description="TIME_MEASURE1_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="TIME_MEASURE2" required="true" type="NUMERIC" description="TIME_MEASURE2_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="TIP" required="false" type="any" description="TIP_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutLattice rows="2" rowDataRange="DATA" columnDataRange="UNIONALL">
+      <Cell name="A1">
+        <LayoutOverlay>
+          <TimeSeriesPlot fadeType="AUTO" name="TimeSeriesPlot_0" responseVars="TIME_MEASURE1" tipListPolicy="REPLACE" time="TIME" tip="TIP" _stmt="timeseriesplot">
+          </TimeSeriesPlot>
+          <YAxisOpts labelPosition="CENTER">
+            <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+          </YAxisOpts>
+        </LayoutOverlay>
+      </Cell>
+      <Cell name="A2">
+        <LayoutOverlay cycleAttrs="true">
+          <TimeSeriesPlot fadeType="AUTO" name="TimeSeriesPlot_1" responseVars="TIME_MEASURE2" tipListPolicy="REPLACE" time="TIME" tip="TIP" _stmt="timeseriesplot">
+          </TimeSeriesPlot>
+          <YAxisOpts labelPosition="CENTER">
+            <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+          </YAxisOpts>
+        </LayoutOverlay>
+      </Cell>
+      <ColumnAxes>
+        <ColumnAxis>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+          <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="STAGGERTRUNCATEDROP"/>
+          <TimeOpts splitTickValue="false" tickValueFormat="DATA"/>
+        </ColumnAxis>
+      </ColumnAxes>
+    </LayoutLattice>
+    <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+      <AutoLegend>
+        <GraphNames/>
+      </AutoLegend>
+    </LayoutGlobalLegend>
+  </StatGraph>
+</GraphTemplate>

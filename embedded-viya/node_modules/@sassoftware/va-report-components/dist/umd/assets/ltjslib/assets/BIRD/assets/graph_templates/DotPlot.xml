@@ -1,0 +1,29 @@
+<GraphTemplate version="1.0">
+  <StatGraph includeMissingDiscrete="true" opaque="false" missingValueDisplay="AUTOLABEL">
+    <Meta>
+      <DynVars>
+        <DynVar name="X" required="true" type="CHARACTER" description="X_VAR" multiplesAllowed="false"/>
+        <DynVar name="Y" required="true" type="NUMERIC" description="Y_VAR" multiplesAllowed="false"/>
+        <DynVar name="COLUMN" required="false" type="CHARACTER" description="HORIZONTAL_SERIES_VAR" multiplesAllowed="true"/>
+        <DynVar name="ROW" required="false" type="CHARACTER" description="VERTICAL_SERIES_VAR" multiplesAllowed="true"/>
+        <DynVar name="TIP" required="false" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+        <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutDataMatrix columnVars="COLUMN" rowVars="ROW" cellWidthMin="1" cellHeightMin="1" includeMissingClass="true">
+      <LayoutPrototypeOverlay2D>
+        <ScatterPlot _stmt="scatterplot" x="X" y="Y" tipListPolicy="REPLACE" animationID="X" tip="TIP" />
+        <YAxisOpts gridDisplay="ON">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </YAxisOpts>
+        
+        <XAxisOpts name="categoryAxis" type="DISCRETE" gridDisplay="ON">
+          <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="STAGGERTRUNCATEDROP"/>
+        </XAxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <OverviewAxis visible="OFF" maxPlotSize="60" axis="categoryAxis" minPlotSize="35" />
+  </StatGraph>
+</GraphTemplate>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+  <Meta>
+    <Template>ScatterMap</Template>
+    <DynVars>
+      <DynVar required="true" name="GROUP" type="character" description="GEO_VAR"></DynVar>
+      <DynVar required="false" name="GEO_TIP" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+      <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+    </DynVars>
+  </Meta>
+  <LayoutOverlayMap showMapController="true">
+    <MapLayer />
+	<ScatterPlot name="ScatterPlot" _stmt="scatterPlot" x="X" y="Y" trailDisplay="BUBBLE LINE" tip="TIP1" tipListPolicy="REPLACE">
+	  <MarkerAttrs symbol="GraphDataStyle2:markerSymbol"/>
+    </ScatterPlot>
+  </LayoutOverlayMap>
+  <LayoutGlobalLegend>    
+    <ContinuousLegend title="auto" title_type="Keyword" displayMissing="AUTO" extractScale="true" valueStyle="INFLECTIONS">
+      <GraphNames>
+        <Value>ScatterPlot</Value>
+      </GraphNames>
+    </ContinuousLegend>
+	<SizeLegend title="auto" title_type="Keyword" extractScale="true">
+         <GraphNames>
+           <Value>ScatterPlot</Value>
+         </GraphNames>
+      </SizeLegend>
+  </LayoutGlobalLegend>
+</StatGraph>
+
+

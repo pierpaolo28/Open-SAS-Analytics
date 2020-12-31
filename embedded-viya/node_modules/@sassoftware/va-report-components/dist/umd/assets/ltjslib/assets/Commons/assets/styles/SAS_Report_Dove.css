@@ -1,0 +1,794 @@
+/*
+ * Copyright (C) 2013, SAS Institute Inc. All rights reserved.
+ *
+ * Purpose: Base Dove Stylesheet
+ * Version: VA 6.2
+ * Schema: BIRD 3.1.0 schema
+ *
+ * Notes:
+ *   - Do not put anything in here that is not necessary and/or not implemented.
+ *   - Keep the indentation as is, because some readers require it.
+ *   - Limit to one property per line, ending with a semicolon.
+ *   - Put comments in slash star - star slash blocks like this one.
+ *   - BIRD selectors, properties, and values are "mostly" case sensitive.
+ *   - Only 1-level selectors are supported, with two exceptions noted below.
+ */
+
+/**********************************************************************/
+ 
+ 
+ 
+/*
+ * This section is used for generic 1-level type selectors. The "*" type
+ * matches everything, and is the only one supported in this version.
+ */
+
+* {
+  /* background-color is omitted to mean transparent */
+  color: #111111;
+  font-size: 12pt;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;  
+  wrap-text: normal;
+}
+
+/**********************************************************************/
+ 
+/*
+ * Reserved class selectors for the report itself go here.
+ */
+
+/* Properties for the overall container of the report */
+.Report {
+  background-color: #EEEEEE;
+  theme: light;
+}
+
+/* Default properties for <Title> tags inside visual elements */
+.TitleStyle {
+  font-size: 14pt;
+}
+/* TODO: add one for footnotes? Not needed for R3 */
+
+/* The optional prompt bar at the top of the report */
+.PromptBar {
+  background-color: #EEEEEE;
+}
+
+/**********************************************************************/
+ 
+/*
+ * Reserved class selectors for Prompt components go here.
+ */
+
+.ComboBox {
+  background-color: #e6e6e6;
+}
+
+.CheckBoxList {
+  background-color: #e0e0e0;
+}
+
+.Slider {
+}
+
+.ButtonBar {
+  background-color: #e6e6e6;
+  font-weight: bold;
+}
+
+.RadioButton {
+}
+
+.HyperLink {
+}
+
+.HyperLinkVisited {
+}
+
+.Hover {
+  color: #000000;
+  background-color: #d4d4d4;
+}
+
+.Selected {
+  color: #000000;
+  background-color: #abafb4;
+}
+
+/**********************************************************************/
+ 
+/*
+ * Reserved class selectors for Table and Crosstab components go here.
+ */
+
+/* Used for Table and Crosstab */
+.Table {
+  alt-row-color: #EEEEEE;
+  row-color: #E0E0E0;
+  horizontal-line-style: none;
+  vertical-line-style: solid;
+}
+
+/* Column headers for Tables only. Note special 2-level selector. */
+Table .Header {
+  color: #111111;
+  background-color: #b7b8ba;
+  font-weight: bold;
+}
+
+Table .Totals {
+  color: #111111;
+  background-color: #cccccc;
+}
+
+Table .Table {
+  wrap-text: none;
+}
+
+/* Table and Crosstab data cells*/
+.Data {
+}
+
+/* Table and Crosstab brushed rows */
+.Brush {
+  color: #000000;
+  background-color: #abafb4;
+}
+
+/* Column headers for Crosstab only. Note special 2-level selector. */
+Crosstab .Header {
+  color: #202020;
+  background-color: #A1BFD3;
+}
+
+/* Crosstab row headers */
+.RowHeader {
+  color: #202020;
+  background-color: #E7EFF3;
+}
+
+/* Crosstab measure headers */
+.MeasureHeader {
+  color: #202020;
+  background-color: #cccccc;
+}
+
+/* Crosstab totals */
+Crosstab .Totals {
+  background-color: #a6d3be;
+  color: #202020;
+  font-weight: bold;
+}
+
+/* Crosstab subtotals */
+Crosstab .Subtotals {
+  background-color: #a6d3be;
+  color: #202020;
+}
+
+/* Style for totals */
+.Totals {
+}
+
+/* Style for subtotals */
+.Subtotals {
+}
+
+/**********************************************************************/
+ 
+/*
+ * Reserved class selectors for Graph and KPI components go here.
+ * Special care is taken to preserve backwards compatibility.
+ */
+
+.GraphDataStyle1 {
+  color: #3D5AAE;
+  fill-color: #3D5AAE;  
+  alt-color: #194393;
+  line-color: #194393;
+  marker-color: #194393;
+  text-color: #194393;
+  fill-pattern-color: #194393;
+  fill-pattern: L1;
+  line-style: 1;
+  marker-symbol: circlefilled;
+}
+
+.GraphDataStyle2 {
+  color: #90B328;
+  fill-color: #90B328;
+  alt-color: #749800;
+  line-color: #749800;
+  marker-color: #749800;
+  text-color: #749800;
+  fill-pattern-color: #749800;
+  fill-pattern: R1;
+  line-style: 4;
+  marker-symbol: squarefilled;
+}
+
+.GraphDataStyle3 {
+  color: #9C2910;
+  fill-color: #9C2910;
+  alt-color: #7F0F00;
+  line-color: #7F0F00;
+  marker-color: #7F0F00;
+  text-color: #7F0F00;
+  fill-pattern-color: #7F0F00;
+  fill-pattern: X1;
+  line-style: 8;
+  marker-symbol: trianglefilled;
+}
+
+.GraphDataStyle4 {
+  color: #FFCA39;
+  fill-color: #FFCA39;
+  alt-color: #D5AA00;
+  line-color: #D5AA00;
+  marker-color: #D5AA00;
+  text-color: #D5AA00;
+  fill-pattern-color: #D5AA00;
+  fill-pattern: L2;
+  line-style: 5;
+  marker-symbol: diamondfilled;
+}
+
+.GraphDataStyle5 {
+  color: #00929F;
+  fill-color: #00929F;
+  alt-color: #04707B;
+  line-color: #04707B;
+  marker-color: #04707B;
+  text-color: #04707B;
+  fill-pattern-color: #04707B;
+  fill-pattern: R2;
+  line-style: 14;
+  marker-symbol: starfilled;
+}
+
+.GraphDataStyle6 {
+  color: #736519;
+  fill-color: #736519;
+  alt-color: #5D583F;
+  line-color: #5D583F;
+  marker-color: #5D583F;
+  text-color: #5D583F;
+  fill-pattern-color: #5D583F;
+  fill-pattern: X2;
+  line-style: 26;
+  marker-symbol: triangledownfilled;
+}
+
+.GraphDataStyle7 {
+  color: #F08000;
+  fill-color: #F08000;
+  alt-color: #D86100;
+  line-color: #D86100;
+  marker-color: #D86100;
+  text-color: #D86100;
+  fill-pattern-color: #D86100;
+  fill-pattern: L3;
+  line-style: 15;
+  marker-symbol: homedownfilled;
+}
+
+.GraphDataStyle8 {
+  color: #A6427C;
+  fill-color: #A6427C;  
+  alt-color: #A853AB;
+  line-color: #A853AB;
+  marker-color: #A853AB;
+  text-color: #A853AB;
+  fill-pattern-color: #A853AB;
+  fill-pattern: R3;
+  line-style: 20;
+}
+
+.GraphDataStyle9 {
+  fill-pattern: X3;
+  line-style : 41;
+}
+
+.GraphDataStyle10 {
+  fill-pattern: L4;
+  line-style : 42;
+}
+
+.GraphDataStyle11 {
+  fill-pattern: R4;
+  line-style : 2;
+}
+
+.GraphDataStyleDefault {
+  color: #3D5AAE;
+  fill-color: #3D5AAE;
+  alt-color: #194393;
+  line-color: #194393;
+  marker-color: #194393;
+  text-color: #194393;
+  fill-pattern-color: #194393;
+  fill-pattern: L1;
+  line-thickness: 3px;
+  marker-size: 9px;
+  marker-symbol: circlefilled;
+  fill-gradient-start-color: #0E36AC;
+  fill-gradient-end-color: #9C1C00;  
+  fill-gradient-neutral-color: #222222;
+}
+
+.KPIRange1 {
+  color: #D15845;
+}
+
+.KPIRange2 {
+  color: #E09346;
+}
+
+.KPIRange3 {
+  color: #F2D94B;
+}
+
+.KPIRange4 {
+  color: #B8CC49;
+}
+
+.KPIRange5 {
+  color: #7BB04A;
+}
+
+.KPIOverflow {
+  color: #579E15;
+}
+
+.KPIUnderflow {
+  color: #C7230A;
+}
+
+.KPIRangeDefault {
+  color: #3D5AAE;
+}
+
+.Overflow {
+  color: #b381f5;
+  fill-color: #b381f5;  
+  alt-color: #9768d9;
+  line-color: #9768d9;
+  marker-color: #9768d9;
+  text-color: #9768d9;
+  line-thickness: 1px;
+  marker-size: 8px;
+  marker-symbol: circlefilled;
+}
+
+.Underflow {
+  color: #71e4da;
+  fill-color: #71e4da;
+  alt-color: #56cbc2;
+  line-color: #56cbc2;
+  marker-color: #56cbc2;
+  text-color: #56cbc2;
+  line-thickness: 1px;
+  marker-size: 9px;
+  marker-symbol: circlefilled;
+}
+
+.Initial {
+  color: #6D6D6D;
+  fill-color: #6D6D6D;  
+  alt-color: #555555;
+  line-color: #555555;
+  marker-color: #555555;
+  text-color: #555555;
+  line-thickness: 1px;
+  fill-pattern: X1;
+  marker-size: 9px;  
+  marker-symbol: circlefilled;
+}
+
+.Final {
+  color: #6D6D6D;
+  fill-color: #6D6D6D;
+  alt-color: #555555;
+  line-color: #555555;
+  marker-color: #555555;
+  text-color: #555555;
+  line-thickness: 1px;
+  fill-pattern: X3;
+  marker-size: 9px;
+  marker-symbol: circlefilled;
+}
+
+.Other {
+  color: #919191;
+  fill-color: #919191;
+  alt-color: #7c7c7c;
+  line-color: #7c7c7c;
+  marker-color: #7c7c7c;
+  text-color: #7c7c7c;  
+  line-thickness: 1px;
+  fill-pattern: X3;
+  marker-size: 9px;
+  marker-symbol: circlefilled;
+}
+
+.Outlier {
+  color: #111111;
+  fill-color: #111111;
+  alt-color: #111111;
+  line-color: #111111;
+  marker-color: #111111;
+  text-color: #111111;  
+  line-thickness: 1px;
+  marker-size: 9px;
+  marker-symbol: circlefilled;
+}
+
+.BoxMedian {
+  line-thickness: 3px;
+  line-color: #111111;
+  alt-color: #111111;
+}
+
+.BoxMean {
+  marker-size: 7px;
+  marker-symbol: diamondfilled;
+  alt-color: #CCCCCC;
+  marker-color: #CCCCCC;
+}
+
+.BoxWhisker {
+  line-thickness: 1px;
+  line-color: #CCCCCC;
+  alt-color: #CCCCCC;
+}
+
+.Selection {
+  color: #ffffff;
+  fill-color: #ffffff;
+  alt-color: #111111;
+  line-color: #111111;
+  marker-color: #111111;
+  text-color: #111111;  
+  line-thickness: 1px;
+  marker-size: 8px;
+  marker-symbol: squarefilled;
+}
+
+.Missing {
+  color: #c7c7c7;
+  fill-color: #c7c7c7;
+  alt-color: #b1b1b1;
+  line-color: #b1b1b1;
+  marker-color: #b1b1b1;
+  text-color: #b1b1b1;  
+  line-thickness: 3px;
+  marker-size: 8px;
+  marker-symbol: squarefilled;
+}
+
+.Box {
+  line-thickness: 1px;
+  line-color: #FF0000;
+  line-style: 1;
+  alt-color: #B9CFE7;
+  display-opts: "fill caps mean median outliers";
+  connect: mean;
+  cap-style: serif;
+}
+
+.Confidence {
+  color: #B9CFE7;
+  fill-color: #B9CFE7;
+  alt-color: #9EB3CB;
+  line-color: #9EB3CB;
+  marker-color: #9EB3CB;
+  text-color: #9EB3CB;
+  line-thickness: 1px;
+  marker-size: 9px;
+  marker-symbol: trianglefilled;
+}
+
+.Confidence2 {
+  color: #E7B9B9;
+  fill-color: #E7B9B9;
+  alt-color: #CB9E9E;
+  line-color: #CB9E9E;
+  marker-color: #CB9E9E;
+  text-color: #CB9E9E;
+  line-thickness: 1px;
+  marker-size: 8px;
+  marker-symbol: diamondfilled;
+}
+
+.PredictionLimits {
+  color: #B9CFE7;
+  fill-color: #B9CFE7;
+  alt-color: #9EB3CB;
+  line-color: #9EB3CB;
+  marker-color: #9EB3CB;
+  text-color: #9EB3CB;  
+  line-thickness: 1px;
+  marker-size: 9px;
+  marker-symbol: homedownfilled;
+}
+
+.Error {
+  color: #9D2E14;
+  fill-color: #9D2E14;  
+  alt-color: #7F0F00;
+  line-color: #7F0F00;
+  marker-color: #7F0F00;
+  text-color: #7F0F00;  
+  line-thickness: 1px;
+  marker-size: 9px;
+  marker-symbol: starfilled;
+}
+
+.ThreeColorRamp {
+  fill-gradient-start-color: #9D2E14;
+  fill-gradient-neutral-color: #EDE1F4;
+  fill-gradient-end-color: #3D5AAE;
+}
+
+.ThreeColorAltRamp {
+  fill-gradient-start-color: #7F0F00;
+  fill-gradient-neutral-color: #D1C5D8; 
+  fill-gradient-end-color: #194393;
+}
+
+/*
+This ramp should contain the same values as .ThreeColorRamp per S0834793
+*/
+.ThreeColorRamp1 {
+  fill-gradient-start-color: #9D2E14;
+  fill-gradient-neutral-color: #EDE1F4;
+  fill-gradient-end-color: #3D5AAE;
+}
+
+.ThreeColorRamp2 {
+  fill-gradient-start-color: #C7250D;
+  fill-gradient-neutral-color: #F2D73D;
+  fill-gradient-end-color: #539D0E;
+}
+
+.ThreeColorRamp3 {
+  fill-gradient-start-color: #990066;
+  fill-gradient-neutral-color: #BD9750;
+  fill-gradient-end-color: #66CD02;
+}
+
+.ThreeColorAltRamp3 {
+  fill-gradient-start-color: #7D004E;
+  fill-gradient-neutral-color: #A17D37;
+  fill-gradient-end-color: #46B100;
+}
+
+.TwoColorRamp {
+  fill-gradient-start-color: #E1E6F4;
+  fill-gradient-end-color: #0E36AC;
+}
+
+.TwoColorAltRamp {
+  fill-gradient-start-color: #C3CAD8;
+  fill-gradient-end-color: #194393;
+}
+
+.colorRampMissing {
+  marker-color: #7e7b7a;
+  line-color: #7e7b7a;
+  fill-color: #989594;
+}
+
+.AxisLines {
+   line-thickness: 1dpx;
+   line-color: #848484;
+   line-style: 1;
+}
+
+.Reference {
+   line-thickness: 1px;
+   line-color: #848484;
+   line-style: 1;
+}
+
+.GridLines {
+  line-thickness: 1dpx;
+  line-color: #4C4C4C;
+  line-style: 2;
+}
+
+.Outlines {
+  line-thickness : 1dpx;
+  line-color : #3b3b3b;
+  line-style : 1;
+}
+
+.BorderLines {
+  line-thickness : 1dpx;
+  line-color : #848484;
+  line-style : 1;
+}
+
+.Fit {
+  color: #111111;
+  fill-color: #111111;  
+  alt-color: #000000;
+  line-color: #000000;
+  marker-color: #000000;
+  text-color: #000000;
+  line-style: 1;
+  line-thickness: 1px;
+  marker-size: 8px;
+  marker-symbol: circlefilled;
+}
+
+.Fit2 {
+  color: #111111;
+  fill-color: #111111;
+  alt-color: #000000;
+  line-color: #000000;
+  marker-color: #000000;
+  text-color: #000000;
+  line-style: 1;
+  line-thickness: 1px;
+  marker-size: 8px;
+  marker-symbol: circlefilled;
+}
+
+.Prediction {
+  color: #3D5AAE;
+  fill-color: #3D5AAE;
+  alt-color: #194393;
+  line-color: #194393;
+  marker-color: #194393;
+  text-color: #194393;  
+  line-thickness: 1px;
+  marker-size: 9px;
+  marker-symbol: triangledownfilled;
+}
+
+.ConnectLine {
+  line-thickness: 1px;
+  line-color: #9D9D9D;
+  line-style: 1;
+}
+
+.TitleText {
+  text-color: #111111;
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+.FootnoteText {
+  text-color: #111111;
+}
+
+.DataText {
+  text-color: #111111;
+  font-size: 7pt;
+}
+
+.LabelText {
+  text-color: #111111;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.ValueText {
+  text-color: #111111;
+  font-size: 9pt;
+}
+
+
+.KPIRangeText {
+  text-color: #111111;
+  alt-text-color: #CCCCCC;
+  font-size: 8pt;
+}
+
+.KPIValueText {
+     text-color: #111111;
+     alt-text-color: #CCCCCC;
+     font-size: 10pt;
+}
+
+/* Backfill is purposely not in sync with FLEX. Backfill is more predominant in the mobile UIs it should match with .Report background color. */
+.BackFill {
+  fill-color: #EEEEEE;
+}
+
+.WallFill {
+  line-thickness : 1dpx;
+  line-color: #848484;
+  fill-color: #FFFFFF;
+  line-style: 1;
+}
+
+.LegendFill {
+  fill-color: #EEEEEE;
+}
+
+.HeaderFill {
+  line-color: #848484;
+  fill-color: #CCCCCC;
+  text-color: #111111;
+}
+
+/* Skins are not in sync with FLEX. TO DO: a new FLAT category needs to be added to our graph skin libraries. */
+.GraphSkin {
+  data-skin: none;
+  kpi-skin: Basic;
+}
+
+.ZoomScrollbarThumb {
+  color: #BBBBBB;
+}
+
+.ZoomScrollbarEndHandle {
+  color: #E5E5E5;
+  line-color: #444444;
+}
+
+.OverviewAxis {
+  color: #FFFFFF;
+  line-color: #848484;
+  line-thickness: 1px;
+}
+
+.OverviewAxisFilter {
+  color: #B0B0B0;
+  fill-color: #B0B0B0;
+  transparency: 0.5;
+}
+
+.GraphDropzoneHighlight {
+  color: #000000;
+  text-color: #000000;
+  background-transparency: 0.95;
+  border-color: #000000;
+  background-color: #2EA3EE;
+  border-width: 1px;
+}
+
+.GraphDropzone {
+  color: #000000;
+  text-color: #000000;
+  background-transparency: 0.9;
+  border-color: #000000;
+  background-color: #A7DDFF;
+  border-width: 1px;
+}
+
+.Increase {
+  fill-color: #90B328;
+  line-color: #ACCF45;
+  line-style: 1;
+  fill-pattern: R1;
+  marker-color: #ACCF45;
+  color: #90B328;
+  alt-color: #ACCF45;
+  marker-symbol: trianglefilled;
+}
+
+.Decrease {
+  fill-color: #9D2E14;
+  line-color: #BB492B;
+  line-style: 1;
+  fill-pattern: L1;
+  marker-color: #BB492B;
+  color: #9D2E14;
+  alt-color: #BB492B;
+  marker-symbol: triangledownfilled;
+}
+
+.TipText {
+  text-color: #000000;
+}
+
+.TipFill {
+  fill-color: #FFFFFF;
+  transparency: .05;
+}

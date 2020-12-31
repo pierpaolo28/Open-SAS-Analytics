@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="300" height="100" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+    <Meta>
+        <Template>KPISlider</Template>
+        <DynVars>
+            <DynVar required="true" name="RESPONSE" type="NUMERIC" description="MEASURE_VAR"></DynVar>
+            <DynVar required="false" name="TARGET" type="NUMERIC" description="TARGET_VAR"></DynVar>
+            <DynVar required="false" name="KPI_GROUP" type="character" description="KPI_GROUP_VAR"></DynVar>
+            <DynVar required="false" name="TIP" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+        </DynVars>
+    </Meta>
+    <LayoutRegion>
+        <KPIChart name="KPIChart" _stmt="kpichart" type="BULLET" value="RESPONSE" target="TARGET" extractScale="true" tip="TIP" tipListPolicy="REPLACE"/>
+    </LayoutRegion>
+</StatGraph>

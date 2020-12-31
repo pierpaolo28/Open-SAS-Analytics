@@ -1,0 +1,43 @@
+<GraphTemplate version="1.0">
+  <StatGraph border="false" opaque="false" missingValueDisplay="AUTOLABEL" includeMissingDiscrete="true">
+    <Meta>
+      <DynVars>
+        <DynVar name="TASK" required="true" type="CHARACTER" description="TASK_VAR" multiplesAllowed="false"></DynVar>
+        <DynVar name="START" required="true" type="TIME" description="START_VAR" multiplesAllowed="false"></DynVar>
+        <DynVar name="FINISH" required="true" type="TIME" description="FINISH_VAR" multiplesAllowed="false"></DynVar>
+        <DynVar name="GROUP" required="false" type="CHARACTER" description="SUBGROUP_VAR" multiplesAllowed="false"></DynVar>
+        <DynVar name="LABEL" required="false" type="ANY" description="LABEL_VAR" multiplesAllowed="false"></DynVar>
+        <DynVar name="COLUMN" required="false" type="CHARACTER" description="HORIZONTAL_SERIES_VAR" multiplesAllowed="true"></DynVar>
+        <DynVar name="ROW" required="false" type="CHARACTER" description="VERTICAL_SERIES_VAR" multiplesAllowed="true"></DynVar>
+        <DynVar name="TIP" required="false" type="ANY" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+        <DynVar name="HIDDEN" required="false" type="CHARACTER" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutDataMatrix cellHeightMin="1" rowVars="ROW" columnVars="COLUMN" cellWidthMin="1">
+      <LayoutPrototypeOverlay2D cycleAttrs="true">
+        <ScheduleChart finish="FINISH" group="GROUP" name="ScheduleChart" start="START" legendLabel="Schedule Chart " display="OUTLINE FILL" tipListPolicy="REPLACE" task="TASK" dataLabel="LABEL" tip="TIP" _stmt="schedulechart"/>
+        <XAxisOpts gridDisplay="ON" name="categoryAxis">
+          <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="STAGGERTRUNCATEDROP"/>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+          <TimeOpts splitTickValue="false" tickValueFormat="DATA"/>
+        </XAxisOpts>
+        <YAxisOpts gridDisplay="OFF" type="DISCRETE" reverse="true">
+          <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="THIN"/>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </YAxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+      <AutoLegend>
+        <GraphNames>
+          <Value>ScheduleChart</Value>
+        </GraphNames>
+      </AutoLegend>
+    </LayoutGlobalLegend>
+    <OverviewAxis axis="categoryAxis" visible="OFF" minPlotSize="35" maxPlotSize="60" />
+  </StatGraph>
+</GraphTemplate>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+   <Meta>
+      <Template>TreeMap</Template>
+         <DynVars>
+            <DynVar required="true" name="TILE" type="character" description="TILE_VAR"></DynVar>
+            <DynVar required="true" name="SIZE" type="numeric" description="SIZE_VAR"></DynVar>
+            <DynVar required="false" name="COLOR" type="numeric" description="COLOR_VAR"></DynVar>
+            <DynVar required="false" name="TIP" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+        </DynVars>
+   </Meta>
+   <LayoutRegion>
+      <TreeMap name="TreeMap" _stmt="treemap" tileBy="TILE" colorResponse="COLOR" size="SIZE" colorStat="NONE" sizeStat="NONE" tip="TIP" tipListPolicy="REPLACE" colorModel="TwoColorRamp"/>
+   </LayoutRegion>
+   <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+      <SizeLegend title="auto" title_type="Keyword" extractScale="true">
+         <GraphNames>
+           <Value>TreeMap</Value>
+         </GraphNames>
+      </SizeLegend>
+      <ContinuousLegend title="auto" title_type="Keyword" displayMissing="AUTO" extractScale="true" valueStyle="INFLECTIONS">
+         <GraphNames>
+           <Value>TreeMap</Value>
+         </GraphNames>
+      </ContinuousLegend>
+   </LayoutGlobalLegend>
+</StatGraph>

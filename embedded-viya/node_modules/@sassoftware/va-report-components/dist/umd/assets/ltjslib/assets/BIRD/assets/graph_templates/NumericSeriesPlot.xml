@@ -1,0 +1,53 @@
+<GraphTemplate version="1.0">
+  <StatGraph border="false" opaque="false" missingValueDisplay="AUTOLABEL" includeMissingDiscrete="true">
+    <Meta>
+      <DynVars>
+        <DynVar name="X" required="true" type="NUMERIC" description="X_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="Y" required="true" type="NUMERIC" description="Y_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="GROUP" required="false" type="CHARACTER" description="SUBGROUP_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="LABEL" required="false" type="ANY" description="LABEL_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="COLUMN" required="false" type="CHARACTER" description="HORIZONTAL_SERIES_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="ROW" required="false" type="CHARACTER" description="VERTICAL_SERIES_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="TIP" required="false" type="any" description="TIP_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutDataMatrix cellHeightMin="1" cellWidthMin="1" rowVars="ROW" columnVars="COLUMN">
+      <LayoutPrototypeOverlay2D>
+        <SeriesPlot connectOrder="XAXIS" tipListPolicy="REPLACE" yVars="Y" name="SeriesPlot" tip="TIP" _stmt="seriesplot" x="X" group="GROUP" dataLabel="LABEL"/>
+        <XAxisOpts name="categoryAxis">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </XAxisOpts>
+        <YAxisOpts>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </YAxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+      <AutoLegend>
+        <GraphNames>
+          <Value>SeriesPlot</Value>
+        </GraphNames>
+      </AutoLegend>
+    </LayoutGlobalLegend>
+    <OverviewAxis axis="categoryAxis" visible="OFF" minPlotSize="35" maxPlotSize="60" />
+  </StatGraph>
+</GraphTemplate>

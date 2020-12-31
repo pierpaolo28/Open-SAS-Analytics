@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+    <Meta>
+        <Template>ScatterPlot</Template>
+        <DynVars>
+            <DynVar required="true" name="MEASURE" type="numeric" description="MEASURE_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="COLOR" type="character" description="COLOR_VAR"></DynVar>
+            <DynVar required="false" name="COLUMN" type="character" description="HORIZONTAL_SERIES_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="ROW" type="character" description="VERTICAL_SERIES_VAR" multiplesAllowed="true"></DynVar>
+	          <DynVar required="false" name="TIP" type="numeric" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+        </DynVars>
+    </Meta>
+    <LayoutDataMatrix cellHeightMin="1" cellWidthMin="1" includeMissingClass="true">
+      <LayoutPrototypeOverlay2D>
+         <ScatterPlot name="ScatterPlot" _stmt="scatterPlot" includeMissingGroup="true" tipListPolicy="REPLACE"/>
+         <YAxisOpts gridDisplay="ON">
+           <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+           </LinearOpts>
+         </YAxisOpts>
+         <Y2AxisOpts gridDisplay="ON">
+           <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+           </LinearOpts>
+         </Y2AxisOpts>
+         <XAxisOpts name="categoryAxis" gridDisplay="ON">
+           <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+           </LinearOpts>
+         </XAxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+  <LayoutGlobalLegend legendTitlePosition="TOP">
+    <AutoLegend>
+      <GraphNames>
+        <Value>ScatterPlot</Value>
+      </GraphNames>
+    </AutoLegend>
+  </LayoutGlobalLegend>
+ <OverviewAxis axis="categoryAxis" maxPlotSize="60" minPlotSize="35" visible="OFF"/>
+</StatGraph>

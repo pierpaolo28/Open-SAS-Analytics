@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+    <Meta>
+        <Template>TimeSeriesPlot</Template>
+        <DynVars>
+            <DynVar required="true" name="TIME" type="time" description="TIME_VAR"></DynVar>
+            <DynVar required="true" name="RESPONSE" type="numeric" description="RESPONSE_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="GROUP" type="character" description="SUBGROUP_VAR"></DynVar>
+            <DynVar required="false" name="TIP" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+        </DynVars>
+    </Meta>
+    <LayoutDataMatrix cellHeightMin="1" cellWidthMin="1" includeMissingClass="true">
+        <LayoutPrototypeOverlay2D>
+            <TimeSeriesPlot name="TimeSeriesPlot" _stmt="timeseriesplot" time="TIME" responseVars="RESPONSE" group="GROUP" fadeType="AUTO" tip="TIP" tipListPolicy="REPLACE" vertexLabelThinPolicy="LOCALEXTREMA"/>
+            <YAxisOpts>
+                <LinearOpts>
+                    <TickValueFormatOpts extractScale="true"/>
+                </LinearOpts>
+            </YAxisOpts>
+            <XAxisOpts name="categoryAxis">
+                <TimeOpts splitTickValue="false" tickValueFormat="DATA" />
+            </XAxisOpts>
+        </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+        <AutoLegend>
+            <GraphNames>
+                <Value>TimeSeriesPlot</Value>
+            </GraphNames>
+        </AutoLegend>
+    </LayoutGlobalLegend>
+ <OverviewAxis axis="categoryAxis" maxPlotSize="60" minPlotSize="35" visible="OFF"/>
+</StatGraph>
+

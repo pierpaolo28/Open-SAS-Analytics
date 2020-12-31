@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+<Meta>
+    <Template>TimeTimeSeriesPlot</Template>
+    <DynVars>
+        <DynVar required="true" name="TIME" type="time" description="TIME_VAR"></DynVar>
+        <DynVar required="true" name="RESPONSE" type="numeric" description="RESPONSE1_VAR"></DynVar>
+        <DynVar required="true" name="RESPONSE2" type="numeric" description="RESPONSE2_VAR"></DynVar>
+        <DynVar required="false" name="TIP" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+        <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+    </DynVars>
+</Meta>
+<LayoutDataMatrix cellHeightMin="1" cellWidthMin="1" includeMissingClass="true">
+    <LayoutPrototypeOverlay2D cycleAttrs="true" alignVerticalAxisTicks="true">
+        <TimeSeriesPlot name="TimeSeriesPlot1" _stmt="timeseriesplot" time="TIME" responseVars="RESPONSE" fadeType="AUTO" tip="TIP" tipListPolicy="REPLACE"/>
+        <TimeSeriesPlot name="TimeSeriesPlot2" _stmt="timeseriesplot" time="TIME" responseVars="RESPONSE2" yAxis="Y2" fadeType="AUTO" tip="TIP" tipListPolicy="REPLACE"/>
+        <YAxisOpts>
+            <LinearOpts>
+                <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+        </YAxisOpts>
+        <Y2AxisOpts>
+            <LinearOpts>
+                <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+        </Y2AxisOpts>
+        <XAxisOpts name="categoryAxis">
+            <TimeOpts splitTickValue="false" tickValueFormat="DATA" />
+        </XAxisOpts>
+    </LayoutPrototypeOverlay2D>
+</LayoutDataMatrix>
+<LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+    <AutoLegend>
+        <GraphNames>
+            <Value>TimeSeriesPlot1</Value>
+            <Value>TimeSeriesPlot2</Value>
+        </GraphNames>
+    </AutoLegend>
+</LayoutGlobalLegend>
+<OverviewAxis axis="categoryAxis" maxPlotSize="60" minPlotSize="35" visible="OFF"/>
+</StatGraph>
+

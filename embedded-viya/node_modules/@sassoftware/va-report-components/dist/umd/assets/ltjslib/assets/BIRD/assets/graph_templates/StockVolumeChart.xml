@@ -1,0 +1,101 @@
+<GraphTemplate version="1.0">
+  <StatGraph includeMissingDiscrete="true" opaque="false" border="false" missingValueDisplay="AUTOLABEL">
+    <Meta>
+      <DynVars>
+        <DynVar name="SHARED_DYNVAR_0" required="true" type="TIME" description="TIME_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="DYNVAR_1" required="true" type="NUMERIC" description="BOLINGER_UPPER_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="DYNVAR_2" required="true" type="NUMERIC" description="BOLINGER_LOWER_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="DYNVAR_4" required="true" type="NUMERIC" description="MOVING_AVG_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="DYNVAR_6" required="true" type="NUMERIC" description="HIGH_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="DYNVAR_8" required="true" type="NUMERIC" description="LOW_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="DYNVAR_10" required="true" type="NUMERIC" description="CLOSE_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="DYNVAR_12" required="true" type="NUMERIC" description="VOLUME_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutGlobalLegend legendTitlePosition="TOP">
+      <AutoLegend>
+        <GraphNames>
+          <Value>TimeSeriesPlot_0</Value>
+        </GraphNames>
+      </AutoLegend>
+    </LayoutGlobalLegend>
+    <LayoutLattice rowWeights="0.75 0.25" rows="2" columnWeights="1" columnDataRange="UNION">
+      <Cell name="A1">
+        <LayoutOverlay cycleAttrs="false">
+          <Y2AxisOpts gridDisplay="OFF" labelPosition="TOP">
+            <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+            <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="THIN"/>
+          </Y2AxisOpts>
+          <XAxisOpts gridDisplay="OFF" name="categoryAxis">
+            <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+            <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="STAGGERTRUNCATEDROP"/>
+          </XAxisOpts>
+          <YAxisOpts gridDisplay="ON" labelPosition="TOP">
+            <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+            <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="THIN"/>
+          </YAxisOpts>
+          <BandPlot name="BandPlot_0" limitUpper="DYNVAR_1" connectOrder="AXIS" tipListPolicy="APPEND" display="FILL" x="SHARED_DYNVAR_0" legendLabel="Band Plot " limitLower="DYNVAR_2" _stmt="bandplot" justify="LEFT" dataTransparency="0.3" >
+            <FillAttrs color="Confidence:fillColor"/>
+            <OutlineAttrs color="Confidence:lineColor"/>
+          </BandPlot>
+          <TimeSeriesPlot tipListPolicy="APPEND" responseVars="DYNVAR_4" name="TimeSeriesPlot_0" time="SHARED_DYNVAR_0" _stmt="timeseriesplot" fadeType="AUTO"/>
+          <VectorPlot xOrigin="SHARED_DYNVAR_0" arrowHeadShape="FILLED" x="SHARED_DYNVAR_0" yOrigin="DYNVAR_8" tipListPolicy="APPEND" name="VectorPlot_0" arrowHeads="false" legendLabel="Vector Plot " y="DYNVAR_6" _stmt="vectorplot"/>
+          <ScatterPlot name="ScatterPlot_0" x="SHARED_DYNVAR_0" tipListPolicy="APPEND" y="DYNVAR_10" _stmt="scatterplot"/>
+        </LayoutOverlay>
+      </Cell>
+      <Cell name="A2">
+        <LayoutOverlay cycleAttrs="true">
+          <Y2AxisOpts gridDisplay="OFF" labelPosition="TOP">
+            <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+            <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="THIN"/>
+          </Y2AxisOpts>
+          <XAxisOpts gridDisplay="OFF">
+            <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+            <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="STAGGERTRUNCATEDROP"/>
+          </XAxisOpts>
+          <YAxisOpts gridDisplay="OFF" labelPosition="TOP">
+            <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+            </LinearOpts>
+            <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="THIN"/>
+          </YAxisOpts>
+          <NeedlePlot name="NeedlePlot_0" tipListPolicy="APPEND" baselineIntercept="NaN" display="STANDARD" x="SHARED_DYNVAR_0" y="DYNVAR_12" _stmt="needleplot"/>
+        </LayoutOverlay>
+      </Cell>
+      <ColumnAxes>
+        <ColumnAxis gridDisplay="OFF">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+          <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="STAGGERTRUNCATEDROP"/>
+        </ColumnAxis>
+      </ColumnAxes>
+    </LayoutLattice>
+  </StatGraph>
+</GraphTemplate>

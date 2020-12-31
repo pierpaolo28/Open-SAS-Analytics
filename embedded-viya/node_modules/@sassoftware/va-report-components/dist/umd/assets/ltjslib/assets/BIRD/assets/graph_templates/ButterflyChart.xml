@@ -1,0 +1,56 @@
+<GraphTemplate version="1.0">
+  <StatGraph includeMissingDiscrete="true" opaque="false" border="false" missingValueDisplay="AUTOLABEL">
+    <Meta>
+      <DynVars>
+        <DynVar name="CATEGORY" required="true" type="CHARACTER" description="CATEGORY_VAR" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_1" required="true" type="NUMERIC" description="BAR_MEASURE1_VAR" multiplesAllowed="false"/>
+        <DynVar name="DYNVAR_3" required="true" type="NUMERIC" description="BAR_MEASURE2_VAR" multiplesAllowed="false"/>
+        <DynVar name="TIP" required="false" type="any" description="TIP_VAR" multiplesAllowed="true"/>
+        <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+      <AutoLegend>
+        <GraphNames>
+          <Value>BarChart_0</Value>
+          <Value>BarChart_1</Value>
+        </GraphNames>
+      </AutoLegend>
+    </LayoutGlobalLegend>
+    <LayoutLattice columns="2" columnDataRange="UNIONALL" rowDataRange="UNION">
+      <RowAxes>
+        <RowAxis type="DISCRETE" reverse="true">
+          <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="THIN"/>
+        </RowAxis>
+      </RowAxes>
+      <Cell name="A1">
+        <LayoutOverlay>
+          <BarChartParm _stmt="barchart" category="CATEGORY" orient="HORIZONTAL" name="BarChart_0" tip="TIP" stat="NONE" groupDisplay="CLUSTER" responseVars="DYNVAR_1" tipListPolicy="REPLACE">
+            <FillAttrs color="GraphDataStyle1:fillColor"/>
+            <OutlineAttrs color="Outlines:lineColor"/>
+          </BarChartParm>
+        </LayoutOverlay>
+      </Cell>
+      <Cell name="B1">
+        <LayoutOverlay>
+          <BarChartParm _stmt="barchart" category="CATEGORY" orient="HORIZONTAL" name="BarChart_1" tip="TIP" stat="NONE" groupDisplay="CLUSTER" responseVars="DYNVAR_3" tipListPolicy="REPLACE">
+            <FillAttrs color="GraphDataStyle2:fillColor"/>
+            <OutlineAttrs color="Outlines:lineColor"/>
+          </BarChartParm>
+        </LayoutOverlay>
+      </Cell>
+      <ColumnAxes>
+        <ColumnAxis reverse="true">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </ColumnAxis>
+        <ColumnAxis>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </ColumnAxis>
+      </ColumnAxes>
+    </LayoutLattice>
+  </StatGraph>
+</GraphTemplate>

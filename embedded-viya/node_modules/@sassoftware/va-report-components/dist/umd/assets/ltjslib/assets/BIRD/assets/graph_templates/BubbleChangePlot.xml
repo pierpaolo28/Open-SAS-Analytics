@@ -1,0 +1,64 @@
+<GraphTemplate version="1.0">
+  <StatGraph missingValueDisplay="AUTOLABEL" opaque="false" includeMissingDiscrete="true">
+    <Meta>
+      <DynVars>
+        <DynVar name="X_START" required="true" type="NUMERIC" description="X_START_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="X_END" required="true" type="NUMERIC" description="X_END_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="Y_START" required="true" type="NUMERIC" description="Y_START_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="Y_END" required="true" type="NUMERIC" description="Y_END_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="SIZE_START" required="true" type="NUMERIC" description="SIZE_START_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="SIZE_END" required="true" type="NUMERIC" description="SIZE_END_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="GROUP" required="true" type="CHARACTER" description="SUBGROUP_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutDataMatrix cellWidthMin="1" cellHeightMin="1" includeMissingClass="true">
+      <LayoutPrototypeOverlay2D>
+        <BubblePlot name="BubblePlot_0"  animationID="GROUP" x="X_START" dataTransparency="0.4" y="Y_START" tipListPolicy="APPEND" size="SIZE_START" group="GROUP" display="OUTLINE FILL" _stmt="bubbleplot" trailDisplay=""/>
+        <BubblePlot name="BubblePlot_1" animationID="GROUP" x="X_END" dataTransparency="0.4" y="Y_END" tipListPolicy="APPEND" size="SIZE_END" group="GROUP" display="OUTLINE FILL" _stmt="bubbleplot" trailDisplay=""/>
+        <VectorPlot name="VectorPlot_0" animationID="GROUP" x="X_END" name="VectorPlot_0" y="Y_END" tipListPolicy="APPEND" yOrigin="Y_START" dataTransparency="0.35" group="GROUP" _stmt="vectorplot" xOrigin="X_START" legendLabel="Vector Plot "/>
+        <XAxisOpts label="X" name="categoryAxis">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </XAxisOpts>
+        <YAxisOpts label="Y">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </YAxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+      <AutoLegend>
+        <GraphNames>
+          <Value>BubblePlot_0</Value>
+        </GraphNames>
+      </AutoLegend>
+      <SizeLegend title_type="KEYWORD" title="AUTO" extractScale="true">
+        <GraphNames>
+          <Value>BubblePlot_0</Value>
+        </GraphNames>
+      </SizeLegend>
+      <SizeLegend title_type="KEYWORD" title="AUTO" extractScale="true">
+        <GraphNames>
+          <Value>BubblePlot_1</Value>
+        </GraphNames>
+      </SizeLegend>
+    </LayoutGlobalLegend>
+    <OverviewAxis minPlotSize="35" axis="categoryAxis" visible="OFF" maxPlotSize="60"/>
+  </StatGraph>
+</GraphTemplate>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" missingValueDisplay="AUTOLABEL">
+    <Meta>
+        <Template>KeyValue</Template>
+        <DynVars>
+            <DynVar required="false" name="CATEGORY" type="character" description="CATEGORY_VAR"></DynVar>
+            <DynVar required="true" name="RESPONSE" type="numeric" description="MEASURE_VAR"></DynVar>
+            <DynVar required="false" name="TIP" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+								</DynVars>
+    </Meta>
+    <LayoutRegion>
+        <KeyValue name="KeyValue" _stmt="keyValue" category="CATEGORY" response="RESPONSE" displayElements="RESPONSELABEL RESPONSEVALUE CATEGORYLABEL CATEGORYVALUE"
+                  hAlign="CENTER"  vAlign="CENTER" justify="left" key="RESPONSEVALUE"  tip="TIP" tipListPolicy="REPLACE"/>
+    </LayoutRegion>
+</StatGraph>
+

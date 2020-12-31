@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+    <Meta>
+        <Template>Histogram</Template>
+        <DynVars>
+            <DynVar required="true" name="X" type="numeric" description="HISTOGRAM_MEASURE"></DynVar>
+            <DynVar required="true" name="Y" type="numeric" description="HISTOGRAM_FREQUENCY"></DynVar>
+			<DynVar required="false" name="TIP" type="numeric" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+       	</DynVars>
+    </Meta>
+    <LayoutOverlay>
+        <HistogramParm x="X" y="Y" name="HistogramParm" _stmt="histogramparm" xValues="LEFTPOINTS" tip="TIP" dataLabelFitPolicy="AUTO" tipListPolicy="REPLACE"/>
+        <XAxisOpts gridDisplay="OFF">
+            <LinearOpts>
+                <TickValueFormatOpts maxWidth="2" extractScale="true"/>
+            </LinearOpts>
+        </XAxisOpts>
+        <YAxisOpts>
+            <LinearOpts>
+                <TickValueFormatOpts maxWidth="2" extractScale="true"/>
+            </LinearOpts>
+        </YAxisOpts>
+    </LayoutOverlay>
+</StatGraph>

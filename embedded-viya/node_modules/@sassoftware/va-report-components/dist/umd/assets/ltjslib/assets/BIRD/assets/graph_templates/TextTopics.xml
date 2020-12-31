@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true"
+           missingValueDisplay="AUTOLABEL" selectionMode="SINGLE" >
+    <Meta>
+        <DynVars>
+            <DynVar required="true" name="TOPIC" type="character" description="TOPIC_VAR"></DynVar>
+            <DynVar required="true" name="DOCUMENT_COUNT" type="numeric" description="DOCUMENT_COUNT_VAR" multiplesAllowed="true"></DynVar>
+        </DynVars>
+    </Meta>
+    <LayoutDataMatrix rowVar="ROW" columnVar="COLUMN" cellHeightMin="1" cellWidthMin="1" includeMissingClass="true">
+        <LayoutPrototypeOverlay2D wallDisplay="FILL">
+            <BarChartParm name="BarChart" dataTransparency="0.2" groupDisplay="STACK" _stmt="barchart" x="TOPIC" orient="HORIZONTAL"
+                          responseVars="DOCUMENT_COUNT" stat="NONE" tipListPolicy="APPEND">
+                <OutlineAttrs color="Outlines:lineColor"/>
+            </BarChartParm>
+            <YAxisOpts gridDisplay="OFF" display="LABEL LINE TICKVALUES AXISGUI"  reverse="true">
+                <LinearOpts>
+                    <TickValueFormatOpts extractScale="true"/>
+                </LinearOpts>
+                <DiscreteOpts sortOrder="DATA"/>
+            </YAxisOpts>
+            <XAxisOpts gridDisplay="ON" name="categoryAxis" display="LABEL LINE TICKVALUES AXISGUI">
+                <LinearOpts>
+                    <TickValueFormatOpts extractScale="true"/>
+                </LinearOpts>
+                <DiscreteOpts tickValueFitPolicy="STAGGERTRUNCATEDROP" sortOrder="DATA"/>
+            </XAxisOpts>
+        </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <LayoutGlobalLegend legendTitlePosition="TOP" border="false">
+        <AutoLegend>
+            <GraphNames>
+                <Value>BarChart</Value>
+            </GraphNames>
+        </AutoLegend>
+    </LayoutGlobalLegend>
+    <OverviewAxis maxPlotSize="60" minPlotSize="35" visible="OFF" axis="categoryAxis"/>
+</StatGraph>

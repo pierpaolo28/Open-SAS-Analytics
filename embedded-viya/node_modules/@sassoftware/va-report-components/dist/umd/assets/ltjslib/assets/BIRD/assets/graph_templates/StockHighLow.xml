@@ -1,0 +1,53 @@
+<GraphTemplate version="1.0">
+  <StatGraph opaque="false" border="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+    <Meta>
+      <DynVars>
+        <DynVar name="SHARED_DYNVAR_0" required="true" type="TIME" description="TIME_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="SHARED_DYNVAR_1" required="true" type="NUMERIC" description="CLOSE_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="DYNVAR_1" required="true" type="NUMERIC" description="HIGH_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="DYNVAR_3" required="true" type="NUMERIC" description="LOW_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutGlobalLegend legendTitlePosition="TOP">
+      <AutoLegend>
+        <GraphNames/>
+      </AutoLegend>
+    </LayoutGlobalLegend>
+    <LayoutDataMatrix cellWidthMin="1" cellHeightMin="1">
+      <LayoutPrototypeOverlay2D cycleAttrs="false">
+        <VectorPlot name="VectorPlot_0" x="SHARED_DYNVAR_0" y="DYNVAR_1" arrowHeads="false" legendLabel="Vector Plot " _stmt="vectorplot" xOrigin="SHARED_DYNVAR_0" yOrigin="DYNVAR_3" tipListPolicy="APPEND"/>
+        <ScatterPlot name="ScatterPlot_0" x="SHARED_DYNVAR_0" _stmt="scatterplot" y="SHARED_DYNVAR_1" tipListPolicy="APPEND"/>
+        <TimeSeriesPlot name="TimeSeriesPlot_0" time="SHARED_DYNVAR_0" dataTransparency="0.8" _stmt="timeseriesplot" responseVars="SHARED_DYNVAR_1" tipListPolicy="APPEND"/>
+        <YAxisOpts gridDisplay="ON">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+          <DiscreteOpts tickValueFitPolicy="THIN" sortOrder="DATA"/>
+        </YAxisOpts>
+        <XAxisOpts gridDisplay="OFF" name="duplicate_categoryAxis">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+          <DiscreteOpts tickValueFitPolicy="STAGGERTRUNCATEDROP" sortOrder="DATA"/>
+        </XAxisOpts>
+        <Y2AxisOpts gridDisplay="OFF">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+          <DiscreteOpts tickValueFitPolicy="THIN" sortOrder="DATA"/>
+        </Y2AxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <OverviewAxis minPlotSize="35" maxPlotSize="60" visible="OFF" axis="duplicate_categoryAxis">
+        <RefPlot plotName="TimeSeriesPlot_0"/>
+    </OverviewAxis>
+  </StatGraph>
+</GraphTemplate>

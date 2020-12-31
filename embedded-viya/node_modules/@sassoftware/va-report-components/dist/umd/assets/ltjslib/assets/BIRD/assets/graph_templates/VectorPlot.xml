@@ -1,0 +1,59 @@
+<GraphTemplate version="1.0">
+  <StatGraph includeMissingDiscrete="true" opaque="false" missingValueDisplay="AUTOLABEL">
+    <Meta>
+      <DynVars>
+        <DynVar name="X" required="true" type="NUMERIC" description="X_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="Y" required="true" type="NUMERIC" description="Y_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="X_ORIGIN" required="true" type="NUMERIC" description="X_ORIGIN_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="Y_ORIGIN" required="true" type="NUMERIC" description="Y_ORIGIN_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="COLOR" required="false" type="CHARACTER" description="COLOR_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="GROUP" required="false" type="CHARACTER" description="SUBGROUP_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="COLUMN" required="false" type="CHARACTER" description="HORIZONTAL_SERIES_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="ROW" required="false" type="CHARACTER" description="VERTICAL_SERIES_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="TIP" required="false" type="any" description="TIP_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+      <AutoLegend>
+        <GraphNames>
+          <Value>VectorPlot</Value>
+        </GraphNames>
+      </AutoLegend>
+    </LayoutGlobalLegend>
+    <LayoutDataMatrix cellHeightMin="1" rowVars="ROW" columnVars="COLUMN" cellWidthMin="1" includeMissingClass="true">
+      <LayoutPrototypeOverlay2D>
+        <VectorPlot name="VectorPlot" yOrigin="Y_ORIGIN" tipListPolicy="REPLACE" animationID="GROUP" _stmt="vectorplot" x="X" tip="TIP" legendLabel="Vector Plot " xOrigin="X_ORIGIN" y="Y" group="COLOR GROUP"/>
+        <YAxisOpts>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </YAxisOpts>
+        <XAxisOpts name="categoryAxis">
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </XAxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <OverviewAxis maxPlotSize="60" axis="categoryAxis" visible="OFF" minPlotSize="35"/>
+  </StatGraph>
+</GraphTemplate>

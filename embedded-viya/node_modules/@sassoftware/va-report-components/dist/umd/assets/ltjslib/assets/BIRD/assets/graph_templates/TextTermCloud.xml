@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true"
+           missingValueDisplay="AUTOLABEL" selectionMode="SINGLE" >
+    <Meta>
+        <Template>WordCloud</Template>
+        <DynVars>
+            <DynVar required="true" name="TERM" type="character" description="TERM_VAR"></DynVar>
+            <DynVar required="true" name="TERM_TOPIC_WEIGHT" type="numeric" description="TERM_TOPIC_WEIGHT_VAR"></DynVar>
+            <DynVar required="false" name="TIP" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+        </DynVars>
+    </Meta>
+    <LayoutRegion>
+        <WordCloud name="WordCloud"
+                   _stmt="wordCloud"
+                   category="TERM"
+                   size="TERM_TOPIC_WEIGHT"
+                   tip="TIP"
+                   tipListPolicy="REPLACE"
+                   includeMissingGroup="false"
+                   arrangement="CLOUD"
+                   fontSizeFactor="4"
+                   maxTerms="100"/>
+    </LayoutRegion>
+    <LayoutGlobalLegend legendTitlePosition="TOP">
+        <SizeLegend title="auto" title_type="Keyword" extractScale="true">
+            <GraphNames>
+                <Value>WordCloud</Value>
+            </GraphNames>
+        </SizeLegend>
+        <ContinuousLegend title="auto" title_type="Keyword" displayMissing="AUTO" extractScale="true" valueStyle="INFLECTIONS">
+            <GraphNames>
+                <Value>WordCloud</Value>
+            </GraphNames>
+        </ContinuousLegend>
+    </LayoutGlobalLegend>
+</StatGraph>
+

@@ -1,0 +1,52 @@
+<GraphTemplate version="1.0">
+  <StatGraph opaque="false" missingValueDisplay="AUTOLABEL" includeMissingDiscrete="true">
+    <Meta>
+      <DynVars>
+        <DynVar name="X" required="true" type="ANY" description="X_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="Y" required="true" type="NUMERIC" description="Y_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="GROUP" required="false" type="CHARACTER" description="SUBGROUP_VAR" multiplesAllowed="false">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="TIP" required="false" type="any" description="TIP_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="COLUMN" required="false" type="CHARACTER" description="HORIZONTAL_SERIES_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar name="ROW" required="false" type="CHARACTER" description="VERTICAL_SERIES_VAR" multiplesAllowed="true">
+          <DefaultValues/>
+        </DynVar>
+        <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+      </DynVars>
+    </Meta>
+    <LayoutDataMatrix cellWidthMin="1" cellHeightMin="1" rowVars="ROW" columnVars="COLUMN" includeMissingClass="true">
+      <LayoutPrototypeOverlay2D cycleAttrs="true">
+        <NeedlePlot name="NeedlePlot" _stmt="needleplot" x="X" y="Y" group="GROUP" tip="TIP" groupDisplay="cluster" tipListPolicy="REPLACE"/>
+        <XAxisOpts name="categoryAxis">
+          <DiscreteOpts sortOrder="DATA" tickValueFitPolicy="STAGGERTRUNCATEDROP"/>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+          <TimeOpts splitTickValue="false" tickValueFormat="DATA"/>  
+        </XAxisOpts>
+        <YAxisOpts>
+          <LinearOpts>
+            <TickValueFormatOpts extractScale="true"/>
+          </LinearOpts>
+        </YAxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+    <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+          <AutoLegend>
+            <GraphNames>
+              <Value>NeedlePlot</Value>
+            </GraphNames>
+          </AutoLegend>
+    </LayoutGlobalLegend>
+    <OverviewAxis maxPlotSize="60" minPlotSize="35" axis="categoryAxis" visible="OFF"/>
+  </StatGraph>
+</GraphTemplate>

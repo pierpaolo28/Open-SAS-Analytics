@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+    <Meta>
+        <Template>BarLineChart</Template>
+        <DynVars>
+            <DynVar required="true" name="CATEGORY" type="character" description="CATEGORY_VAR"></DynVar>
+            <DynVar required="true" name="RESPONSE" type="numeric" description="BAR_MEASURE_VAR"></DynVar>
+            <DynVar required="true" name="RESPONSE2" type="numeric" description="LINE_MEASURE_VAR" multiplesAllowed="false"></DynVar>
+            <DynVar required="false" name="COLUMN" type="character" description="HORIZONTAL_SERIES_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="ROW" type="character" description="VERTICAL_SERIES_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="TIP" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="KEY_FRAME" type="time" description="ANIMATION" multiplesAllowed="false"></DynVar>
+            <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+        </DynVars>
+    </Meta>
+	<Animation keyFrame="KEY_FRAME" keyFrameSortOrder="ASCENDINGUNFORMATTED"/>
+    <LayoutDataMatrix rowVars="ROW" columnVars="COLUMN" cellHeightMin="1" cellWidthMin="1" includeMissingClass="true">
+      <LayoutPrototypeOverlay2D cycleAttrs="true" alignVerticalAxisTicks="true">
+         <BarChartParm name="BarChart" _stmt="barchart" x="CATEGORY" y="RESPONSE" stat="NONE" tip="TIP" tipListPolicy="REPLACE">
+            <OutlineAttrs color="Outlines:lineColor"/>
+         </BarChartParm>
+         <LineChart name="LineChart" _stmt="linechart" category="CATEGORY" responseVars="RESPONSE2" yAxis="Y2" stat="NONE" fadeType="AUTO" tip="TIP" tipListPolicy="REPLACE"/>
+         <YAxisOpts>
+           <LinearOpts>
+              <TickValueFormatOpts extractScale="true"/>
+           </LinearOpts>
+         </YAxisOpts>
+         <Y2AxisOpts>
+           <LinearOpts>
+              <TickValueFormatOpts extractScale="true"></TickValueFormatOpts>
+           </LinearOpts>
+         </Y2AxisOpts>
+         <XAxisOpts name="categoryAxis" offsetMax="0" offsetMin="0">
+           <DiscreteOpts tickValueFitPolicy="STAGGERTRUNCATEDROP" sortOrder="DATA"></DiscreteOpts>
+         </XAxisOpts>
+      </LayoutPrototypeOverlay2D>
+    </LayoutDataMatrix>
+  <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+    <AutoLegend>
+      <GraphNames>
+        <Value>BarChart</Value>
+        <Value>LineChart</Value>
+      </GraphNames>
+    </AutoLegend>
+  </LayoutGlobalLegend>
+  <OverviewAxis axis="categoryAxis" maxPlotSize="60" minPlotSize="35" visible="OFF"/>
+</StatGraph>
+

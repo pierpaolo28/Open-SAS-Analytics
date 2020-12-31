@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StatGraph version="9.3" width="400" height="400" border="false" opaque="false" includeMissingDiscrete="true" missingValueDisplay="AUTOLABEL">
+    <Meta>
+        <Template>PieChart</Template>
+        <DynVars>
+            <DynVar required="true" name="CATEGORY" type="character" description="CATEGORY_VAR"></DynVar>
+            <DynVar required="true" name="RESPONSE" type="numeric" description="MEASURE_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="GROUP" type="character" description="SUBGROUP_VAR"></DynVar>
+            <DynVar required="false" name="COLUMN" type="character" description="HORIZONTAL_SERIES_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="ROW" type="character" description="VERTICAL_SERIES_VAR" multiplesAllowed="true"></DynVar>			
+            <DynVar required="false" name="TIP" type="any" description="TIP_VAR" multiplesAllowed="true"></DynVar>
+            <DynVar required="false" name="KEY_FRAME" type="time" description="ANIMATION" multiplesAllowed="false"></DynVar>
+            <DynVar required="false" name="HIDDEN" type="character" description="HIDDEN_VAR" multiplesAllowed="true"></DynVar>
+        </DynVars>
+    </Meta>
+	<Animation keyFrame="KEY_FRAME" keyFrameSortOrder="ASCENDINGUNFORMATTED"/>
+    <LayoutDataMatrix rowVars="ROW" columnVars="COLUMN" cellHeightMin="1" cellWidthMin="1" includeMissingClass="true">
+       <LayoutPrototypeRegion>
+          <PieChart name="PieChart" _stmt="piechart" stat="NONE" category="CATEGORY" response="RESPONSE" group="GROUP" categoryOrder="DATA" includeMissingGroup="true"  start="90" dataLabelContent="NONE" tip="TIP" tipListPolicy="REPLACE" />
+       </LayoutPrototypeRegion>
+    </LayoutDataMatrix>
+  <LayoutGlobalLegend legendTitlePosition="TOP" allowCollapsed="true">
+    <AutoLegend>
+      <GraphNames>
+        <Value>PieChart</Value>
+      </GraphNames>
+    </AutoLegend>
+  </LayoutGlobalLegend>
+</StatGraph>
