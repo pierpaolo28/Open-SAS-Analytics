@@ -1,0 +1,20 @@
+proc print data=pg1.np_summary(obs=10);
+run;
+
+data work.parks work.monuments;
+	set pg1.np_summary;
+	where upcase(type) in ('NP', 'NM');
+	format campers comma12.;
+	campers = sum(of tentcampers--backcountrycampers);
+	type = upcase(type);
+	length parktype $ 8;
+	if type='NP' then do;
+		parktype='Park';
+		output parks;
+	end;
+	else if type='NM' then do;
+		parktype='Monument';
+		output monuments;
+	end;
+	keep reg parkname dayvisits otherlodging campers parktype;
+run;
