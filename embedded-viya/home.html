@@ -46,6 +46,8 @@
     <!--[if IE]><link rel="shortcut icon" href="/assets/img/icons/favicon.ico?v=qA3OXqyw77"><![endif]-->
     <link rel="shortcut icon" href="/assets/img/icons/favicon.ico?v=qA3OXqyw77">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
     <meta name="apple-mobile-web-app-title" content="Sleek">
     <meta name="application-name" content="Sleek">
     <meta name="msapplication-config" content="/assets/img/icons/browserconfig.xml?v=qA3OXqyw77">
@@ -574,7 +576,7 @@
             }
         }
     </style>
-    <link rel="preload" href="/assets/css/main.css" as="style" onload="this.rel='stylesheet'"> <noscript><link rel="stylesheet" href="/assets/css/main.css"></noscript>
+    <link id="style" rel="preload" href="/assets/css/main.css" as="style" onload="this.rel='stylesheet'"> <noscript><link id="style" rel="stylesheet" href="/assets/css/main.css"></noscript>
     <script type="text/javascript">
         /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
         (function(w) {
@@ -646,6 +648,7 @@
             }
         }(typeof global !== "undefined" ? global : this))
     </script>
+
 </head>
 
 <body class="site">
@@ -691,8 +694,6 @@
                     <sas-report class="col-12" hideNavigation="auto" authenticationType="guest" url="https://viyawaves.sas.com" reportUri="/reports/reports/534420ff-9efa-4cf2-9240-2fbfd24cf454"></sas-report>
                 </div>
 
-                <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-                <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
                 <script async src="node_modules/@sassoftware/va-report-components/dist/umd/va-report-components.js"></script>
                 <script async src="node_modules/@webcomponents/custom-elements/custom-elements.min.js"></script>
 
@@ -722,41 +723,36 @@
                     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
                     <style type="text/css">
                         #mc_embed_signup {
-                            background: #fff;
+                            /* background: #fff; */
                             clear: left;
                             font: 14px Helvetica, Arial, sans-serif;
                         }
                         /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block. We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
                     </style>
                     <div id="mc_embed_signup">
-                        <form action="https://gmail.us3.list-manage.com/subscribe/post?u=ef500ef45f8aed2f720046461&amp;id=f27cd55314" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <form action="https://www.getrevue.co/profile/pier_paolo_28/add_subscriber" method="post" id="revue-form" name="revue-form" target="_blank">
                             <div id="mc_embed_signup_scroll">
-                                <h2>Subscribe to my mailing list to be updated about my new posts!</h2>
+                                <h2>Subscribe to my Data Blog Newsletter to get news about Data, Cloud and my website!</h2>
                                 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                                <div class="mc-field-group"> <label for="mce-EMAIL">Email Address <span class="asterisk">*</span> </label> <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"></div>
-                                <div class="mc-field-group"> <label for="mce-FNAME">Name </label> <input type="text" value="" name="FNAME" class="" id="mce-FNAME"></div>
-                                <div id="mce-responses" class="clear">
-                                    <div class="response" id="mce-error-response" style="display:none"></div>
-                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                <div class="mc-field-group">
+                                    <label for="member_email">Email Address <span class="asterisk">*</span></label>
+                                    <input class="revue-form-field" type="email" name="member[email]" id="member_email">
                                 </div>
-                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ef500ef45f8aed2f720046461_f27cd55314" tabindex="-1" value=""></div>
-                                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                                <div class="mc-field-group">
+                                    <label for="member_first_name">Name</label>
+                                    <input class="revue-form-field" type="text" name="member[first_name]" id="member_first_name">
+                                </div>
+                                <!-- <div class="mc-field-group">
+                                    <label for="member_last_name">Last Name</label>
+                                    <input class="revue-form-field" type="text" name="member[last_name]" id="member_last_name">
+                                </div> -->
+                                <div class="clear">
+                                    <input type="submit" value="Subscribe" name="member[subscribe]" id="mc-embedded-subscribe" class="button">
+                                </div>
+                                <div class="revue-form-footer">By subscribing, you agree with Revue’s <a target="_blank" href="https://www.getrevue.co/terms">Terms of Service</a> and <a target="_blank" href="https://www.getrevue.co/privacy">Privacy Policy</a>.</div>
                             </div>
                         </form>
                     </div>
-                    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-                    <script type='text/javascript'>
-                        (function($) {
-                            window.fnames = new Array();
-                            window.ftypes = new Array();
-                            fnames[0] = 'EMAIL';
-                            ftypes[0] = 'email';
-                            fnames[1] = 'FNAME';
-                            ftypes[1] = 'text';
-                        }(jQuery));
-                        var $mcj = jQuery.noConflict(true);
-                    </script>
                     <div id="disqus_thread"></div>
                     <script>
                         var disqus_config = function() {
@@ -774,13 +770,114 @@
             </div>
         </div>
     </main>
+    <style>
+        /*slider switch css */
+        
+        .theme-switch-wrapper {
+            /* display: flex; */
+            align-items: center;
+            em {
+                margin-left: 10px;
+                font-size: 1rem;
+            }
+        }
+        
+        .theme-switch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            width: 60px;
+        }
+        
+        .theme-switch input {
+            display: none;
+        }
+        
+        .slider {
+            background-color: #ccc;
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: .4s;
+        }
+        
+        .slider:before {
+            background-color: #fff;
+            bottom: 4px;
+            content: "";
+            height: 26px;
+            left: 4px;
+            position: absolute;
+            transition: .4s;
+            width: 26px;
+        }
+        
+        input:checked+.slider {
+            background-color: #66bb6a;
+        }
+        
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+        
+        .slider.round {
+            border-radius: 34px;
+        }
+        
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    </style>
+
     <footer class="footer">
+        <div class="theme-switch-wrapper">
+            <em>Dark Mode Toggle</em>
+            <br><br>
+            <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="slider round"></div>
+            </label>
+        </div>
         <div class="container">
+            <br>
+            <!-- cssswitcher js -->
+            <script type='text/javascript'>
+                var cssStyle = document.getElementById('style');
+                var listStyles = ["/assets/css/main.css", "/assets/css/dark.css"];
+
+                window.onload = function() {
+                    if (localStorage && localStorage.getItem("style"))
+                        cssStyle.href = localStorage.getItem("style");
+                };
+
+                function toggleStyle() {
+                    var previousStyle = cssStyle.href;
+
+                    if (previousStyle.endsWith(listStyles[0]))
+                        newStyle = listStyles[1];
+                    else
+                        newStyle = listStyles[0];
+
+                    cssStyle.href = newStyle;
+
+                    if (localStorage)
+                        localStorage.setItem("style", newStyle);
+                };
+
+                const checkbox = document.getElementById('checkbox');
+
+                checkbox.addEventListener('change', () => {
+                    toggleStyle();
+                })
+            </script>
             <nav class="social">
                 <a class="social__link" target="_blank" rel="noopener noreferrer" href="https://github.com/pierpaolo28"> <svg class="social__icon" viewBox="0 0 20 20" width="20px" height="20px"><path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z" /> </svg>                    </a>
                 <a class="social__link" target="_blank" rel="noopener noreferrer" href="https://www.twitter.com/Pier_Paolo_28"> <svg class="social__icon" viewBox="0 0 20 20" width="20px" height="20px"><path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z" /> </svg>                    </a>
-                <a class="social__link" target="_blank" rel="noopener noreferrer" href="https://medium.com/@pierpaoloippolito28"> <svg class="social__icon" viewBox="0 0 25 25" width="20px" height="20px" preserveAspectRatio="none"> <g fill="#cfd8dc"><path d="m.5 3.5h7l5 11.5-2 5.592-7-15.092z" /><path d="m.5 20.5h6l-3-3z" /><path d="m21.5 5.5 2-2h-7v14.944l-2 2.056h9l-1.927-1.999z" /> </g><path d="m.338 4.422 2.597 1.708v10.867l-2.712 2.676c-.476.471-.141 1.284.527 1.284h5.869c.667 0 1.004-.812.527-1.284l-2.712-2.676v-7.912c2.781 5.916 5.492 11.673 5.427 11.542.274.556 1.141.571 1.376-.075l.001-.002s.001-.001.001-.002c.65-1.793 2.044-5.638 1.955-5.394.05-.139 2.421-6.906 2.458-7.011v9.773l-1.741 1.765c-.467.474-.13 1.277.534 1.277h8.805c.662 0 1-.799.536-1.274l-1.673-1.713-.067-11.933 1.731-1.708c.476-.471.141-1.284-.527-1.284-.702 0 2.545-.001-6.87.004-.958.028-.634.889-3.986 9.772l-4.11-9.329c-.12-.272-.39-.448-.687-.448h-6.847c-.742.001-1.033.97-.412 1.377zm2.239 15.036 1.107-1.093 1.107 1.093zm14.575-14.912h4.271c-.479.535-.881.691-.879 1.185l.071 12.551c.002.476.391.643.854 1.175h-5.23c.517-.587.914-.748.914-1.234v-13.677zm-10.044 0 4.554 10.335-1.226 3.447c-6.176-13.116-5.959-13.322-7.181-13.782z" / </svg>                    </a>
-            </nav><span>&copy; 2020 Pier Paolo Ippolito. All rights reserved.</span></div>
+                <a class="social__link" target="_blank" rel="noopener noreferrer" href="https://medium.com/@pierpaoloippolito28"> <svg class="social__icon" viewBox="0 0 25 25" width="20px" height="20px" preserveAspectRatio="none"> <g fill="#cfd8dc"><path d="m.5 3.5h7l5 11.5-2 5.592-7-15.092z" /><path d="m.5 20.5h6l-3-3z" /><path d="m21.5 5.5 2-2h-7v14.944l-2 2.056h9l-1.927-1.999z" /> </g><path d="m.338 4.422 2.597 1.708v10.867l-2.712 2.676c-.476.471-.141 1.284.527 1.284h5.869c.667 0 1.004-.812.527-1.284l-2.712-2.676v-7.912c2.781 5.916 5.492 11.673 5.427 11.542.274.556 1.141.571 1.376-.075l.001-.002s.001-.001.001-.002c.65-1.793 2.044-5.638 1.955-5.394.05-.139 2.421-6.906 2.458-7.011v9.773l-1.741 1.765c-.467.474-.13 1.277.534 1.277h8.805c.662 0 1-.799.536-1.274l-1.673-1.713-.067-11.933 1.731-1.708c.476-.471.141-1.284-.527-1.284-.702 0 2.545-.001-6.87.004-.958.028-.634.889-3.986 9.772l-4.11-9.329c-.12-.272-.39-.448-.687-.448h-6.847c-.742.001-1.033.97-.412 1.377zm2.239 15.036 1.107-1.093 1.107 1.093zm14.575-14.912h4.271c-.479.535-.881.691-.879 1.185l.071 12.551c.002.476.391.643.854 1.175h-5.23c.517-.587.914-.748.914-1.234v-13.677zm-10.044 0 4.554 10.335-1.226 3.447c-6.176-13.116-5.959-13.322-7.181-13.782z" /> </svg>                    </a>
+            </nav><span>&copy; 2021 Pier Paolo Ippolito. All rights reserved.</span></div>
     </footer>
     <script async src="/assets/js/bundle.js"></script>
 </body>
