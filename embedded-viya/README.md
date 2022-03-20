@@ -11,4 +11,4 @@ The web application will then be running at: http://localhost:8080/
 
 Additional information about how to create your own example is available in [this blog post.](http://sww.sas.com/blogs/wp/gate/34793/my-first-development-with-va-sdk-using-node-js/sbxxab/2020/01/17)
 
-An example live demo is available at [this link.](https://embedded-viya.herokuapp.com/)
+An example live demo is available at [this link](https://embedded-viya.herokuapp.com/) (live demo not anymore available).
